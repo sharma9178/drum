@@ -4,7 +4,18 @@
 for(var i=0;i<document.querySelectorAll(".drum").length;i++){
 	document.querySelectorAll(".drum")[i].addEventListener("click", function(){
 		var letter=this.innerHTML;
-		switch(letter){
+		makeSound(letter);
+		
+				
+});}
+
+document.addEventListener("keypress",function(event){
+makeSound(event.key);})
+
+
+function makeSound(key){
+	
+     switch(key){
 			case 'w': var audio=new Audio('crash.mp3');
                       audio.play();
 			break;
@@ -35,6 +46,5 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
 			
 			default: alert("wrong click");
 		}
-				
-});}
+}
 
